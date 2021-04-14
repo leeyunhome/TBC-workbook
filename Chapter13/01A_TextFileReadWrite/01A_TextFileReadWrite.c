@@ -4,11 +4,25 @@
 
 int main(int argc, char* argv[])
 {
-	//int ch;
-	//FILE* fr;	//TODO: file pointer to write
+	int ch;
+	FILE* fr;	//TODO: file pointer to write
 
+	if (NULL == (fr = fopen("input.txt", "r")))
+	{
+		printf("ERROR: Cannot open file\n");
+		exit(EXIT_FAILURE);
+	}
 
+	while ((ch = fgetc(fr)) != EOF)
+	{
+		fputc(ch, stdout);
+	}
 
+	if (fclose(fr) != 0)
+	{
+		printf("ERROR: Cannot close file\n");
+		exit(EXIT_FAILURE);
+	}
 	/*
 	typedef struct _iobuf
 	{
