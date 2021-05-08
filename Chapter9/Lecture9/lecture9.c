@@ -14,9 +14,10 @@ void print_binary_loop(unsigned long n);
 
 int main()
 {
+	unsigned long num = 10;
 
-
-
+	//print_binary_loop(num);
+	print_binary(num);
 
 	return 0;
 }
@@ -24,15 +25,41 @@ int main()
 //Note: printing order is reversed!
 void print_binary_loop(unsigned long num)
 {
+	//int quotient = num;
+	//int remainder = 0;
 
+	//while (quotient != 0)
+	//{
+	//	quotient /= 2;
+	//	printf("%d", remainder);
+
+	//	remainder = quotient % 2;
+
+	//}
+	while (1)
+	{
+		int quotient = num / 2;
+		int remainder = num % 2;
+
+		printf("%d", remainder); // remainder is 0 or 1
+
+		num = quotient;
+
+		if (num == 0) break;
+	}
 
 	printf("\n");
 }
 
 void print_binary(unsigned long num)
 {
+	//printf("%d", num % 2);
+	int remainder = num % 2;
 
+	if (num >= 2)
+		print_binary(num / 2);
 
+	printf("%d", remainder);
 
 	return;
 }
