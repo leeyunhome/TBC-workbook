@@ -29,25 +29,25 @@ int main()
 int int_min(int i, int j)
 //int_min(int i, int j)
 {
-	int min;
+	//int min;
 
-	if (i < j)
-		min = i;
-	else
-		min = j;
+	//if (i < j)
+	//	min = i;
+	//else
+	//	min = j;
 
-	return min;
+	//return min;
 
 	//return (i < j) ? i : j;
 
 	//return (float)min;
 
-	//if (i < j)
-	//	return i;
-	//else
-	//	return j;
+	if (i < j)
+		return i;
+	else
+		return j;
 
-	//printf("ERROR");
+	printf("ERROR");
 	//exit(1);
 
 	//return; // return with no value
