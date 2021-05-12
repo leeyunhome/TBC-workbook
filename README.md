@@ -12,3 +12,4 @@
 * 본 코딩 워크북 공개가 맘에 드신다면 오른쪽 상단의 'star'를 꼭 눌러주세요.
 
 ![image](https://user-images.githubusercontent.com/59910227/118054125-aa77c200-b3c0-11eb-9f84-014004e26ff8.png)
+flexible array member : https://computersource.tistory.com/61
