@@ -12,7 +12,7 @@ int main()
 	{
 		size_t count;
 		double average;
-		double values[];	// flexible array member (last member!)
+		double values[];	
 	};
 
 	const size_t n = 3;
