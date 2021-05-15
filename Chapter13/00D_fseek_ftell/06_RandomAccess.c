@@ -11,7 +11,10 @@
 
 int main()
 {
+	int ch;
+	long cur;
 
+	FILE* fp = fopen("test.txt", "r");
 
 
 	/* SEEK_END */

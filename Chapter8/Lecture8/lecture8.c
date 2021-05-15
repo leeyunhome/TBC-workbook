@@ -9,7 +9,8 @@ void count(void);
 
 int main()
 {
-	int user_choice;
+	printf("Select menu");
+	printf("1. input an char\t2. ")
 
 	while ((user_choice = get_choice()) != 'q')
 	{
@@ -32,25 +33,8 @@ int main()
 	}
 	/*char sel = 0;
 
-	printf("a. Assemble\tb. beep\n");
-	printf("c. count\t4. q to quit.\n");
 
-	sel = get_choice();
 
-	switch (sel)
-	{
-	case 'a':
-		printf("Avengers Assemble.\n");
-		break;
-	case 'b':
-		printf("\a");
-		break;
-	case 'c':
-		count();
-		break;
-	default:
-		break;
-	}*/
 	return 0;
 }
 
@@ -70,49 +54,40 @@ void count(void)
 		continue;
 }
 
-char get_choice(void)
-{
-	int user_input;
-	
-	printf("Enter the letter of your choice:\n");
-	printf("a. avengers\tb. beep\n");
-	printf("c. count\tq. quit\n");
-
-	user_input = get_first_char();
-
-	while ((user_input < 'a' || user_input > 'c') && user_input != 'q')
-	{
-		printf("Please try again.\n");
-		user_input = get_first_char();
-	}
-
-	return user_input;
-}
-
-char get_first_char(void)
-{
-	int ch;
-
-	ch = getchar();
-	//scanf("%c", &ch);
-
-	while (getchar() != '\n')
-		continue;
-
-	return ch;
-}
-
-int get_integer(void)
-{
-	int input;
-	char c;
-
-	while (scanf("%d", &input) != 1)
-	{
-		while ((c = getchar()) != '\n')
-			putchar(c);
-		printf(" is not an integer.\nPlease try again.\n");
-	}
-
-	return input;
-}
+//void count(void)
+//{
+//
+//
+//
+//}
+//
+//char get_choice(void)
+//{
+//	int user_input;
+//	
+//
+//
+//
+//
+//	return user_input;
+//}
+//
+//char get_first_char(void)
+//{
+//	int ch;
+//
+//
+//
+//
+//
+//	return ch;
+//}
+//
+//int get_integer(void)
+//{
+//	int input;
+//
+//
+//
+//	return input;
+//}
