@@ -7,8 +7,9 @@
 	- A function declaration is assumed to be extern
 */
 
+int g_int = 123; //defining declaration
 
-void fun();
+extern void fun();
 void fun_second();
 
 int main()

@@ -11,7 +11,12 @@ int main()
 		- defined in stdlib.h.
 	*/
 
-
+	//srand(1);	// random seed
+	//srand((unsigned int)time(0));
+	for (int row = 0; row < 10; ++row)
+	{
+		printf("%d\n", rand());
+	}
 
 	return 0;
 }
