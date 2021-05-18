@@ -7,13 +7,21 @@ int main(int argc, char* argv[])
 	int ch;
 	FILE* fr;	//TODO: file pointer to write
 
-	if (NULL == (fr = fopen("input.txt", "r")))
+	unsigned long count = 0;
+
+	if (argc != 2)
+	{
+		prntf("Usage: %s filename\n", argv[0]);
+		exit(EXIT_FAILURE);
+	}
+
+	if (NULL == (fr = fopen(argv[1], "r")))
 	{
 		printf("ERROR: Cannot open file\n");
 		exit(EXIT_FAILURE);
 	}
 
-	while ((ch = fgetc(fr)) != EOF)
+	while ((ch = fgetc(fr)) != EOF) //getc(fr)
 	{
 		fputc(ch, stdout);
 	}
