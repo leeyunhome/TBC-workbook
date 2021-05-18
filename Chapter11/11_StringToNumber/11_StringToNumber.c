@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
 		//	puts(argv[2]);
 
 		/* Example 2*/
-		printf("Sum = %d\n", atoi(argv[1]) + atoi(argv[2]));
+		//printf("Sum = %d\n", atoi(argv[1]) + atoi(argv[2]));
 	}
 
 
@@ -33,6 +33,10 @@ int main(int argc, char * argv[])
 		strtod() converts base 10 only
 	*/
 
+	char str1[] = "-1024Hello";
+	char* end;
+	long l = strtol(str1, &end, 10);
+	printf("%s %ld %s %d\n", str1, 1, end, (int)*end);
 
 
 	/*

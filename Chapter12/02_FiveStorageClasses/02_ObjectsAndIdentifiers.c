@@ -21,7 +21,10 @@ int main()
 		R-value : right side, variable, constant, expressions (KNK p. 67)
 	*/
 
+	var_name = 3;	// modifiable lvalue
 
+	pt = &var_name;
+	int* ptr = arr;
 
 
 

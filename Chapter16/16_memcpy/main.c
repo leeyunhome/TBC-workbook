@@ -19,15 +19,24 @@ int main()
 	- pointer-to-void (datatype is unknown)
 	*/
 
+	int arr1[LEN] = { 1, 3, 5, 7, 9, 11 };
+	//int arr2[LEN] = { 0, };
+	int* arr2 = (int*)malloc(LEN * sizeof(int));
+	if (arr2 == NULL) exit(1);
 
+	for (int row = 0; row < LEN; ++row)
+		arr2[row] = arr1[row];
 
+	memcpy(arr2, arr1, sizeof(int) * LEN);
+	prt(arr2, LEN);
 
 	/*
 	{ 1, 3, 5, 7, 9, 11 }
 	{ 5, 7, 9, 11, 9, 11}
 	*/
- 
-
+	//memcpy(arr1, &arr1[2], sizeof(int) * 4);	// undefined behavior
+	memmove(arr1, &arr1[2], sizeof(int) * 4);
+	prt(arr1, LEN);
 
 	return 0;
 }
