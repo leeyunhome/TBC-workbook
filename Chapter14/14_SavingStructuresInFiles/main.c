@@ -36,7 +36,7 @@ int main()
 	print_books(my_books, n);
 
 	printf("\nWriting to a file.\n");
-	write_books("books.txt", my_books, n);
+	write_books("books.dat", my_books, n);
 	free(my_books);
 	n = 0;
 	printf("Done.\n");
@@ -45,7 +45,7 @@ int main()
 	temp = _getch();
 
 	//my_books = read_books("books.txt", &n);
-	read_books2("books.txt", &my_books, &n);
+	read_books2("books.dat", &my_books, &n);
 
 	print_books(my_books, n);
 
@@ -65,19 +65,18 @@ void print_books(const struct book* books, int n)
 void write_books(const char* filename, const struct book* books, int n)
 {
 	FILE* fw = NULL;
-	if (NULL == (fw = fopen(filename, "w")))
+	if (NULL == (fw = fopen(filename, "wb")))
 	{
 		printf("ERROR: Cannot open %s file.\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
-	fprintf(fw, "%d\n", n);
+	fwrite(&n, sizeof(int), 1, fw);
 
-	for (int row = 0; row < n; row++)
-	{
-		fprintf(fw, "%s\n", books[row].name);
-		fprintf(fw, "%s\n", books[row].author);
-	}
+	//for (int row = 0; row < n; row++)
+	//{
+	fwrite(books, sizeof(struct book), n, fw);
+	//}
 	
 	if (0 != fclose(fw))
 	{
@@ -139,13 +138,14 @@ void read_books2(const char* filename, struct book** books_dptr, int* n_ptr)//No
 {
 	FILE* fr = NULL;
 
-	if (NULL == (fr = fopen(filename, "r")))
+	if (NULL == (fr = fopen(filename, "rb")))
 	{
 		printf("ERROR: Cannot open %s file.\n", filename);
 		exit(1);
 	}
 
-	int flag = fscanf(fr, "%d%*c", n_ptr);
+	//int flag = fscanf(fr, "%d%*c", n_ptr);
+	fread(n_ptr, sizeof(*n_ptr), 1, fr);
 
 	(*books_dptr) = (struct book*)malloc(sizeof(struct book) * *n_ptr);
 	//struct book *books = (struct book*)malloc(sizeof(struct book) * *n_ptr);
@@ -156,16 +156,7 @@ void read_books2(const char* filename, struct book** books_dptr, int* n_ptr)//No
 		exit(1);
 	}
 
-	for (int row = 0; row < *n_ptr; row++)
-	{
-		flag = fscanf(fr, "%[^\n]%*c%[^\n]%*c", (*books_dptr + row)->name, (*books_dptr + row)->author);
-
-		if (flag != 2)
-		{
-			printf("File read failed");
-			exit(1);
-		}
-	}
+	fread(*books_dptr, sizeof(struct book), *n_ptr, fr);
 
 	if (0 != fclose(fr))
 	{
