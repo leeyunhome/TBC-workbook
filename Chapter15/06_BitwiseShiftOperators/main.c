@@ -34,7 +34,23 @@ int main()
 
 	//Note: the signed result is machine dependent
 
+	int a = 1;
+	a <<= 3;
+	a >>= 2;
 
+	printf("Unsigned int %u\n", 0xffffffff);
+	printf("Signed int %d\n", 0xffffffff);
+	int_binary(0xffffffff);
+	printf("Right shift by 3\n");
+	int_binary(  (signed)0xffffffff >> 3);
+	int_binary((unsigned)0xffffffff >> 3);
+
+	printf("\nUnsigned int %u\n", 0x00ffffff);
+	printf("Signed int %d\n", 0x00ffffff);
+	int_binary(0x00ffffff);
+	printf("Right shift by 3\n");
+	int_binary(  (signed)0x00ffffff >> 3);
+	int_binary((unsigned)0x00ffffff >> 3);
 
 	return 0;
 }

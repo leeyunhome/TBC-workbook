@@ -3,7 +3,7 @@
 
 struct names
 {
-	char first[20];
+	char first[20]; 
 	char last[20];
 };
 
