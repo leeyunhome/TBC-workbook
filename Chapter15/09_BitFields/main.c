@@ -35,7 +35,7 @@ int main()
 	items_flag.has_potion  = 0;
 	items_flag.has_guntlet = 1;
 	items_flag.has_hammer  = 0;
-	items_flag.has_key     = 0;
+	items_flag.has_key     = 1;
 	items_flag.has_ring    = 1;
 	items_flag.has_amulet  = true;
 
@@ -78,10 +78,11 @@ int main()
 
 	/* 1988 12 28*/
 	fd.day = 28;	// try overflow, try 'signed int'
-	fd.month = 12;
+	fd.month = 16;
 	fd.year = 8;
 
 	printf("Day %u, Month %u, Year %u\n", fd.day, fd.month, fd.year);
+	scanf("%d", &fd.day);	/* WRONG */
 
 	return 0;
 }
