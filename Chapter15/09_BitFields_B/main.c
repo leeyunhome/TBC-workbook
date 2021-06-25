@@ -22,25 +22,25 @@ int main()
 {
 	struct
 	{
-		bool option1 : 7;
-		//bool : 0;
+		bool option1 : 1;
+		unsigned long long : 0;
 		bool option2 : 1;
-		unsigned long long option3 : 1;
+		//unsigned long long option3 : 16;
 	} bbf;
 
-	memset((char*)&bbf, 0xff, sizeof(bbf));
-	print_binary((char*)&bbf, sizeof(bbf));
-	bbf.option1 = 0;
-	bbf.option2 = 0;
-	bbf.option3 = 0;
-	print_binary((char*)&bbf, sizeof(bbf));
+	//memset((char*)&bbf, 0x00, sizeof(bbf));
+	//print_binary((char*)&bbf, sizeof(bbf));
+	//bbf.option1 = 1;
+	//bbf.option2 = 1;
+	//bbf.option3 = 0xffff;
+	//print_binary((char*)&bbf, sizeof(bbf));
 
 	printf("%zu bytes\n", sizeof(bbf));
 
 	struct {
 		unsigned short option1 : 8;
 		unsigned short option2 : 7;
-		// unsigned short : 0;
+		 unsigned short : 0;
 		unsigned short option3 : 1;
 	} usbf;
 
@@ -48,7 +48,7 @@ int main()
 
 	struct {
 		unsigned int option1 : 1;
-		//unsigned int : 0;
+		unsigned int : 0;
 		unsigned int option2 : 1;
 		//bool option3 : 1;
 	} uibf;
