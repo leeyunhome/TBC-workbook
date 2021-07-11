@@ -9,9 +9,10 @@ int divide(int a, int b);
 
 int main()
 {
+	int a, b;
+	int f = scanf("%d%d", &a, &b);
 
-
-
+	printf("a / b = %d", divide(a, b));
 
 	return 0;
 }

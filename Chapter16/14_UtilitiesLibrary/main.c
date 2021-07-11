@@ -19,10 +19,17 @@ void thankyou(void)
 int main()
 {
 	printf("Purchased?\n");
+	if (getchar() == 'y')
+		atexit(thankyou);
 
-
+	while (getchar() != '\n') {};
 
 	printf("Goodbye message ?\n");
+	if (getchar() == 'y')
+		atexit(goodbye);
+
+
+	//printf("Goodbye message ?\n");
 
 
 
