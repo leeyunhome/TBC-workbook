@@ -8,7 +8,7 @@
 */
 
 
-
+static int g_int = 123;	// defining declaration
 
 void fun();
 void fun_second();
@@ -25,6 +25,8 @@ int main()
 
 void fun()
 {
+	extern int g_int;	// optional
 
-
+	g_int += 1;
+	printf("g_int in fun() %d %p\n", g_int, &g_int);
 }
