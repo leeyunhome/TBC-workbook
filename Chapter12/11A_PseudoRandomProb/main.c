@@ -5,7 +5,12 @@
 
 int main()
 {
+	my_srand((unsigned int)time(0));
 
+	for (int row = 0; row < 10; ++row)
+	{
+		printf("%d\n", my_rand() % 6 + 1);
+	}
 
 	return 0;
 }

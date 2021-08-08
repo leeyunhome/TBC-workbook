@@ -11,11 +11,20 @@ int main()
 		- defined in stdlib.h.
 	*/
 
-	//srand(1);	// random seed
+	//srand(3);	// random seed
 	//srand((unsigned int)time(0));
-	for (int row = 0; row < 10; ++row)
+	//for (int row = 0; row < 10; ++row)
+	//{
+	//	printf("%d\n", rand());
+	//}
+
+	unsigned int next = (unsigned int)time(0);
+
+	for (int idx = 0; idx < 10; ++idx)
 	{
-		printf("%d\n", rand());
+		next = next * 1103515245 + 1234;
+		next = (unsigned int)(next / 65536) % 32768;
+		printf("%d\n", (int)next);
 	}
 
 	return 0;
