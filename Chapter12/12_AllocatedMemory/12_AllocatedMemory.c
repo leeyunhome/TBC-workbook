@@ -4,8 +4,10 @@
 
 int main()
 {
+	float x;
+	char str[] = "Dancing with a Star";
 
-
+	int arr[100];
 
 	/*
 		malloc() returns a void type pointer.
@@ -14,16 +16,57 @@ int main()
 		free() deallocates the memory
 	*/
 
+	double* ptr = NULL;
 
+	ptr = (double*)malloc(30 * sizeof(double));
 
+	if (NULL == ptr)
+	{
+		puts("Memory allocation failed.");
 
+		/*
+			exit(EXIT_FAILURE) is similar to return 1 IN main().
+			exit(EXIT_FAILURE) is similar to return 0 In main().
+		*/
 
+		exit(EXIT_FAILURE);
+	}
+
+	printf("Before free %p\n", ptr);
+
+	free(ptr);	// no action occurs when ptr is NULL
+
+	printf("After free %p\n", ptr);
+
+	ptr = NULL;	// optional
 
 	/* Dynamically Allocated Array */
 
+	int n = 5;
+	ptr = (double*)malloc(n * sizeof(double));
 
+	if (ptr != NULL)	// if(!ptr)
+	{
+		for (int i = 0; i < n; ++i)
+		{
+			printf("%f ", ptr[i]);
+		}
+		printf("\n");
 
+		for (int i = 0; i < n; ++i)
+		{
+			*(ptr + i) = (double)i;
+		}
 
+		for (int i = 0; i < n; ++i)
+		{
+			printf("%f ", ptr[i]);
+		}
+		printf("\n");
+	}
+
+	free(ptr);
+	ptr = NULL;
 
 	/*
 		Comparision to VLA
