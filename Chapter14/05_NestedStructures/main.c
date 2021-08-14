@@ -42,6 +42,12 @@ Please visit the Gatsby mansion on 10/4/1925 at 18:30.
 Sincerely,
 Jay Gatsby
 */
+	const char* formatted_string = 
+		"\
+Dear %s %s,\n\
+I would like to serve you %s.\n\
+";
 
+	printf(formatted_string, res.guest.given, res.guest.family, res.food);
 	return 0;
 }
