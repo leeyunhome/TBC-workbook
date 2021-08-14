@@ -11,6 +11,7 @@ char* s_gets(char* st, int n)
 	char* find;
 
 	ret_val = fgets(st, n, stdin);  // vs. scanf()
+	fprintf(stderr, "%s=%d, %s\n", __FUNCTION__, __LINE__, ret_val);
 	if (ret_val)
 	{
 		find = strchr(st, '\n');	// look for newline
@@ -40,15 +41,24 @@ int main()
 	while (1)
 	{
 		printf("Input a book title or press [Enter] to stop.\n>>");
+		char buffer[MAX_TITLE];
+		strcpy(library[count].title, s_gets(buffer, MAX_TITLE));
+		if ('\0' == (library[count].title)[0])
+			break;
 		//TODO: input title
 		//TODO: break if the first character of the input title is '\0'
 
 		printf("Input the author.\n>>");
+		strcpy(library[count].author, s_gets(buffer, MAX_AUTHOR));
 		//TODO: input author name
 
 		printf("Input the price.\n>>");
+		int flag = scanf("%f", &(library[count].price));
 		//TODO: input price
 		//TODO: clear buffer
+
+		while (getchar() != '\n')
+			continue;
 
 		count++;
 
