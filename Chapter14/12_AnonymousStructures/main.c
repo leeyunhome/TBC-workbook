@@ -16,7 +16,7 @@ struct person
 struct person2
 {
 	int id;
-	struct { char first[20]; char last[20]; };	// anonymous structure
+	struct { char first[20]; char last[20]; };	// anonymous structure 이름이 없기 때문에
 };
 
 int main()
