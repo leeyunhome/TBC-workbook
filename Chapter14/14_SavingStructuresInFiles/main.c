@@ -46,7 +46,6 @@ int main()
 
 	//my_books = read_books("books.txt", &n);
 	read_books2("books.dat", &my_books, &n);
-
 	print_books(my_books, n);
 
 	free(my_books);
@@ -57,109 +56,200 @@ int main()
 
 void print_books(const struct book* books, int n)
 {
-	for (int row = 0; row < n; ++row)
-		printf("book %d \"%s\" written by \"%s\"\n", 
-			row + 1, books[row].name, books[row].author);
+	for (int number_of_books = 0; number_of_books < n; number_of_books++)
+	{
+		printf("\"%s\" is written by %s \n", books[number_of_books].name, books[number_of_books].author);
+	}
 }
 
 void write_books(const char* filename, const struct book* books, int n)
 {
-	FILE* fw = NULL;
-	if (NULL == (fw = fopen(filename, "wb")))
+	FILE* file = NULL;
+	if (NULL == (file = fopen(filename, "wb")))
 	{
-		printf("ERROR: Cannot open %s file.\n", filename);
+		fprintf(stderr, "%s=%d Cannot Open file.\n", __FUNCTION__, __LINE__);
 		exit(EXIT_FAILURE);
 	}
 
-	fwrite(&n, sizeof(int), 1, fw);
+	fwrite(&n, sizeof(n), 1, file);
+	fwrite(books, sizeof(struct book), n, file);
+	//fprintf(file, "%d\n", n);
 
-	//for (int row = 0; row < n; row++)
+	//for (int number_of_books = 0; number_of_books < n; ++number_of_books)
 	//{
-	fwrite(books, sizeof(struct book), n, fw);
+	//	fprintf(file, "%s\n%s\n", books[number_of_books].name, books[number_of_books].author);
 	//}
-	
-	if (0 != fclose(fw))
-	{
-		puts("ERROR: Cannot close file.");
-	}
+
+	fclose(file);
 }
 
-struct book* read_books(const char* filename, int * n_ptr)
+struct book* read_books(const char* filename, int* n)
 {
-	FILE* fr = NULL;
-	int temp = 0;
-	
-	if (NULL == (fr = fopen(filename, "r")))
+	FILE* file = NULL;
+
+	if (NULL == (file = fopen(filename, "r")))
 	{
-		printf("ERROR: Cannot open %s file.\n", filename);
+		fprintf(stderr, "%s=%d Cannot Open file.\n", __FUNCTION__, __LINE__);
 		exit(EXIT_FAILURE);
 	}
 
-	int flag = fscanf(fr, "%d%*c", &temp);
-	*n_ptr = temp;
+	int flag = fscanf(file, "%d%*c", n);
+	struct book* books = (struct book*)calloc(sizeof(struct book), *n);
 
-	//struct book* books = (struct book*)malloc(sizeof(struct book) * *n_ptr);
-	struct book* books = (struct book*)calloc(sizeof(struct book), *n_ptr);
-
-	if (books == NULL)
+	if (!books)
 	{
-		printf("ERROR: Malloc failed.\n");
+		printf("ERROR: Malloc() failed");
 		exit(1);
 	}
 
-	for (int row = 0; row < *n_ptr; row++)
+	for (int number_of_books = 0; number_of_books < *n; ++number_of_books)
 	{
-		flag = fscanf(fr, "%[^\n]%*c", books[row].name);
-
-		if (flag != 1)
-		{
-			printf("File read failed");
-			exit(1);
-		}
-
-		flag = fscanf(fr, "%[^\n]%*c", books[row].author);
-
-		if (flag != 1)
-		{
-			printf("File read failed");
-			exit(1);
-		}
+		flag = fscanf(file, "%[^\n]%*c%[^\n]%*c", books[number_of_books].name, books[number_of_books].author);
 	}
 
-	if (0 != fclose(fr))
-	{
-		puts("ERROR: Cannot close file.");
-	}
-
+	fclose(file);
+	
 	return books;
 }
 
-void read_books2(const char* filename, struct book** books_dptr, int* n_ptr)//Note: double pointer
+void read_books2(const char* filename, struct book** books_dptr, int* n)
 {
-	FILE* fr = NULL;
+	FILE* file = NULL;
 
-	if (NULL == (fr = fopen(filename, "rb")))
+	if (NULL == (file = fopen(filename, "r")))
 	{
-		printf("ERROR: Cannot open %s file.\n", filename);
+		fprintf(stderr, "%s=%d Cannot Open file.\n", __FUNCTION__, __LINE__);
+		exit(EXIT_FAILURE);
+	}
+
+	fread(n, sizeof(*n), 1, file);
+	//int flag = fscanf(file, "%d%*c", n);
+
+	struct book* books = (struct book*)calloc(sizeof(struct book), *n);
+
+	if (!books)
+	{
+		printf("ERROR: Malloc() failed");
 		exit(1);
 	}
 
-	//int flag = fscanf(fr, "%d%*c", n_ptr);
-	fread(n_ptr, sizeof(*n_ptr), 1, fr);
+	fread(books, sizeof(struct book), *n, file);
 
-	(*books_dptr) = (struct book*)malloc(sizeof(struct book) * *n_ptr);
-	//struct book *books = (struct book*)malloc(sizeof(struct book) * *n_ptr);
+	//for (int number_of_books = 0; number_of_books < *n; ++number_of_books)
+	//{
+	//	flag = fscanf(file, "%[^\n]%*c%[^\n]%*c", books[number_of_books].name, books[number_of_books].author);
+	//}
 
-	if (*books_dptr == NULL)
-	{
-		printf("ERROR: Malloc failed.\n");
-		exit(1);
-	}
+	fclose(file);
 
-	fread(*books_dptr, sizeof(struct book), *n_ptr, fr);
-
-	if (0 != fclose(fr))
-	{
-		puts("ERROR: Cannot close file.");
-	}
+	*books_dptr = books;
 }
+//
+//void print_books(const struct book* books, int n)
+//{
+//	for (int row = 0; row < n; ++row)
+//		printf("book %d \"%s\" written by \"%s\"\n", 
+//			row + 1, books[row].name, books[row].author);
+//}
+//
+//void write_books(const char* filename, const struct book* books, int n)
+//{
+//	FILE* fw = NULL;
+//	if (NULL == (fw = fopen(filename, "wb")))
+//	{
+//		printf("ERROR: Cannot open %s file.\n", filename);
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	fwrite(&n, sizeof(int), 1, fw);
+//
+//	//for (int row = 0; row < n; row++)
+//	//{
+//	fwrite(books, sizeof(struct book), n, fw);
+//	//}
+//	
+//	if (0 != fclose(fw))
+//	{
+//		puts("ERROR: Cannot close file.");
+//	}
+//}
+//
+//struct book* read_books(const char* filename, int * n_ptr)
+//{
+//	FILE* fr = NULL;
+//	int temp = 0;
+//	
+//	if (NULL == (fr = fopen(filename, "r")))
+//	{
+//		printf("ERROR: Cannot open %s file.\n", filename);
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	int flag = fscanf(fr, "%d%*c", &temp);
+//	*n_ptr = temp;
+//
+//	//struct book* books = (struct book*)malloc(sizeof(struct book) * *n_ptr);
+//	struct book* books = (struct book*)calloc(sizeof(struct book), *n_ptr);
+//
+//	if (books == NULL)
+//	{
+//		printf("ERROR: Malloc failed.\n");
+//		exit(1);
+//	}
+//
+//	for (int row = 0; row < *n_ptr; row++)
+//	{
+//		flag = fscanf(fr, "%[^\n]%*c", books[row].name);
+//
+//		if (flag != 1)
+//		{
+//			printf("File read failed");
+//			exit(1);
+//		}
+//
+//		flag = fscanf(fr, "%[^\n]%*c", books[row].author);
+//
+//		if (flag != 1)
+//		{
+//			printf("File read failed");
+//			exit(1);
+//		}
+//	}
+//
+//	if (0 != fclose(fr))
+//	{
+//		puts("ERROR: Cannot close file.");
+//	}
+//
+//	return books;
+//}
+//
+//void read_books2(const char* filename, struct book** books_dptr, int* n_ptr)//Note: double pointer
+//{
+//	FILE* fr = NULL;
+//
+//	if (NULL == (fr = fopen(filename, "rb")))
+//	{
+//		printf("ERROR: Cannot open %s file.\n", filename);
+//		exit(1);
+//	}
+//
+//	//int flag = fscanf(fr, "%d%*c", n_ptr);
+//	fread(n_ptr, sizeof(*n_ptr), 1, fr);
+//
+//	(*books_dptr) = (struct book*)malloc(sizeof(struct book) * *n_ptr);
+//	//struct book *books = (struct book*)malloc(sizeof(struct book) * *n_ptr);
+//
+//	if (*books_dptr == NULL)
+//	{
+//		printf("ERROR: Malloc failed.\n");
+//		exit(1);
+//	}
+//
+//	fread(*books_dptr, sizeof(struct book), *n_ptr, fr);
+//
+//	if (0 != fclose(fr))
+//	{
+//		puts("ERROR: Cannot close file.");
+//	}
+//}
