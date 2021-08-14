@@ -66,7 +66,7 @@ void receive_input(struct name_count* ptr_nc)
 
 void count_characters(struct name_count* ptr_nc)
 {
-	//ptr_nc->num = strlen(ptr_nc->first) + strlen(ptr_nc->last);
+	ptr_nc->num = strlen(ptr_nc->first) + strlen(ptr_nc->last);
 	//ptr_nc->num = (int)strlen(ptr_nc->first) + (int)strlen(ptr_nc->last); // int castings remove warnings
 }
 
