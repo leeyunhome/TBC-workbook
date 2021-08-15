@@ -26,22 +26,14 @@ int main()
 		{
 			break;
 		}
-		else
+
+		for (color = red; color <= blue; ++color)
 		{
-			for (int idx = red; idx <= blue; ++idx)
+			if (0 == strcmp(choice, colors[color]))
 			{
-				if (0 == strcmp(choice, colors[idx]))
-				{
-					//printf("%s\n", colors[idx]);
-					color_is_found = true;
-					color = idx;
-				}
-				//else
-				//{
-				//	printf("Please try different color %s.\n", choice);
-				//	color_is_found = false;
-				//	break;
-				//}
+				//printf("%s\n", colors[idx]);
+				color_is_found = true;
+				break;
 			}
 		}
 
