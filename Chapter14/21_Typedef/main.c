@@ -10,9 +10,19 @@ int main()
 		- Does not create new types.
 	*/
 
+	typedef unsigned char BYTE; // Note the scope of BYTE
 
+	BYTE x, y[10] = { 0, }, * z = &x;
 
+	{
+		typedef unsigned char byte; // You can use lowercases as well.
 
+		/* Portable data types */
+		
+		size_t s = sizeof(byte); // unsigned int (x86), unsigned long long (x64)
+		//unsigned int s = sizeof(byte);	// x86
+		//unsigned long long s = sizeof(byte); // x64
+	}
 	//byte b;// typedef definition has a scope
 
 	/*
@@ -20,14 +30,17 @@ int main()
 		in seconds.
 	*/
 
-	
+	time_t t = time(NULL);
 
+	printf("%lld\n", t);
 
 	/*
 		typedef vs #define
 	*/
 
-	
+	typedef char* STRING;
+
+	STRING name = "John Wick", sign = "World";
 
 
 	/*
@@ -40,8 +53,15 @@ int main()
 	char * name, sign;//Note the type of sign
 	*/
 
-	
+	typedef struct complex {
+		float real;
+		float imag;
+	} COMPLEX;	// typedef struct complex COMPLEX
 
+	typedef struct { double width; double height; } rect; // No tag
+	rect r1 = { 1.1, 2.2 };
+	rect r2 = r1;
+	printf("%f %f\n", r2.width, r2.height);
 
 	return 0;
 }
