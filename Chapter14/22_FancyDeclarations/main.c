@@ -24,17 +24,17 @@ int main()
 		- When there's a choice, always favor [] and () over *(asterisk).
 	*/
 
-	//int* ap[10];	 // Identifier ap is an array of pointers
-	//
-	//typedef int* pint;
-	//pint ap2[10];
+	int *ap[10];	 // Identifier ap is an array of pointers
+	
+	typedef int* pint;
+	pint ap2[10];
 
-	//float* fp(float);// fp is a function that returns a pointer
-	//
-	//typedef float* pfloat;
-	//pfloat fp2(float);
+	float* fp(float);// fp is a function that returns a pointer
+	
+	typedef float* pfloat;
+	pfloat fp2(float);
 
-	//void (*pf)(int);
+	void (*pf)(int);
 	/*
 		void (*pf)(int);
 		      1           1. pointer to
@@ -57,7 +57,7 @@ int main()
 
 	/* BUT it can return a pointer to an array */
 
-	//int(*f(int))[];
+	int(*f(int))[];
 
 	/* A function can't return a function */
 
@@ -65,7 +65,7 @@ int main()
 
 	/* BUT it can return a pointer to a function */
 
-	//int (*g(int))(int);
+	int (*g(int))(int);
 
 	/* An array of functions aren't possible */
 
@@ -73,14 +73,14 @@ int main()
 	
 	/* BUT an array of function pointers are possible */
 	
-	//int (*x2[10])(int);
+	int (*x2[10])(int);
 
 	/* Using typedef to simplify declarations */
 
-	/*typedef int FCN(int);
+	typedef int FCN(int);
 	typedef FCN* FCN_PTR;
 	typedef FCN_PTR FCN_PTR_ARRAY[10];
-	FCN_PTR_ARRAY x3;*/
+	FCN_PTR_ARRAY x3;
 
 	/* More examples */
 
