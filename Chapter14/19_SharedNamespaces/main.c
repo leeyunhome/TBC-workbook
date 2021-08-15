@@ -6,7 +6,7 @@ int iamfunction()
 	return 0;
 }
 
-//int a = 123;
+int c = 123;
 
 int main()
 {
@@ -17,15 +17,29 @@ int main()
 		- C++: use 'namespace' to use the same identifiers in the duplicated scopes.
 	*/
 
+	int myname = 123;
 
+	{
+		int myname = 345;
+		//double myname = 3.14;//ERROR
+	}
 
+	struct rect { double x; double y; };
+
+	int rect = 123;	// OK in C (Not OK in C++)
+	//struct rect rect = { 1.1, 2.2 };	// struct rect and rect are in different categories
+
+	//typedef struct rect rect;
+	//rect rect = { 1.1, 2.2 }; // Not OK
+
+	//int iamfunction = iamfunction();//ERROR
 
 	/*
 		Namespace pollution (KNK p.465)
 		- Names in different files accidentally conflicting with each other
 	*/
 
-	
+	//printf("%d\n", a); // other.c
 
 
 	return 0;
