@@ -26,6 +26,37 @@ int main()
 
 	while (true)
 	{
+		printf("Choose an option:\n");
+		printf("u) to upper\n");
+		printf("l) to lower\n");
+		printf("t) to transpose\n");
+
+		char c = 0;
+		int flag = scanf("%c", &c);
+		bool found = false;
+
+		// 여기가 가장 중요한 엔진부분이잖아요?
+		// 기능을 실제로 수행하는 부분입니다.
+		// 근데 요 부분은 고칠 게 없어요.
+		for (int i = 0; i < n; ++i)
+		{
+			if (c == options[i])
+			{
+				operations[i](input);
+				found = true;
+				break;
+			}
+		}
+
+		if (found)
+			break;
+		else
+			printf("Wrong input, try again\n");
+	}
+	
+	/*
+	while (true)
+	{
 		fprintf(stderr, "%s=%d\n", __FUNCTION__, __LINE__);
 
 		printf("Choose an option:\n");
@@ -61,7 +92,7 @@ int main()
 		//	;
 		//}
 	}
-
+	*/
 	printf("%s\n", input);
 
 	return 0;
@@ -75,26 +106,25 @@ void update_string(char* str, int(*pf)(int))
 		str++;
 	}
 }
-
 void ToUpper(char* str)
 {
-	while (*str)
-	{
-		*str = toupper(*str);
-		str++;
-	}
+	update_string(str, toupper);
+	//while (*str)
+	//{
+	//	*str = toupper(*str);
+	//	str++;
+	//}
 }
-
 void ToLower(char* str)
 {
-	while (*str)
-	{
-		*str = tolower(*str);
-		str++;
-	}
+	update_string(str, tolower);
+	//while (*str)
+	//{
+	//	*str = tolower(*str);
+	//	str++;
+	//}
 }
-
-void Transpose(char* str)
+void Transpose(char* str)//TODO: add a new menu
 {
 	while (*str)
 	{
@@ -105,3 +135,42 @@ void Transpose(char* str)
 		str++;
 	}
 }
+//
+//void update_string(char* str, int(*pf)(int))
+//{
+//	while (*str)
+//	{
+//		*str = pf(*str);
+//		str++;
+//	}
+//}
+//
+//void ToUpper(char* str)
+//{
+//	while (*str)
+//	{
+//		*str = toupper(*str);
+//		str++;
+//	}
+//}
+//
+//void ToLower(char* str)
+//{
+//	while (*str)
+//	{
+//		*str = tolower(*str);
+//		str++;
+//	}
+//}
+//
+//void Transpose(char* str)
+//{
+//	while (*str)
+//	{
+//		if (islower(*str))
+//			*str = toupper(*str);
+//		else if (isupper(*str))
+//			*str = tolower(*str);
+//		str++;
+//	}
+//}

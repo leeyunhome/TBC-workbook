@@ -3,17 +3,46 @@
 
 int main()
 {
-	//FILE* fp;
-	//int ch;
+	FILE* fp;
+	int ch;
 
 	/* ungetc() */
+	//fp = fopen("input.txt", "r");
 
+	//ch = fgetc(fp);
+	//fputc(ch, stdout);
 
+	//ungetc((int)'A', fp);
 
+	//ch = fgetc(fp);
+	//fputc(ch, stdout);
+
+	//ch = fgetc(fp);
+	//fputc(ch, stdout);
+
+	//fclose(fp);
 
 	/* setvbuf() */
 
+	//fp = fopen("input.txt", "r");
 
+	//char buffer[32] = { '\0', };
+
+	//setvbuf(fp, buffer, _IOFBF, sizeof(buffer)); // _IOLBF, _IOFBF, _IONBF
+
+	//// dump buffer
+	//for (int i = 0; i < sizeof(buffer); ++i)
+	//	printf("%hhd", buffer[i]);
+	//printf("\n");
+
+	//ch = fgetc(fp);	 // Read just only a single characterrr!
+
+	//// dump buffer
+	//for (int i = 0; i < sizeof(buffer); ++i)
+	//	printf("%c", buffer[i]);
+	//printf("\n");
+
+	//fclose(fp);
 
 	/* fflush() */
 
