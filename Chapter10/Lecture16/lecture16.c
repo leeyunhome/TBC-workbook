@@ -46,13 +46,15 @@ int main()
 //	return tot;
 //}
 //
-//int sum2d_3(int* ar, int row, int col)
-//{
-//	int r, c, tot = 0;
-//	
-//
-//	return tot;
-//}
+int sum2d_3(int* ar, int row, int col)
+{
+	int r, c, tot = 0;
+	for (r = 0; r < row; r++)
+		for (c = 0; c < col; c++)
+			tot += *(ar + c + col * r); // ar[c + col * r]
+
+	return tot;
+}
 
 /*
 	In higher dimensions, 

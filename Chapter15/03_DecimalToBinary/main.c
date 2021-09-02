@@ -36,36 +36,41 @@ int main()
 
 void print_binary(const unsigned char num)
 {
-	printf("Decimal %3d == Binary ", num);
 
-	const size_t bits = sizeof(num) * CHAR_BIT;
-
-	//for (size_t i = 0; i < bits; ++i)
-	//{
-	//	const unsigned char mask =
-	//		(unsigned char)pow((double)2, (double)(bits - 1 - i));
-	//	// unsigned char mask = pow(2, (bits - 1 - i));
-
-	//	if ((num & mask) == mask)
-	//		printf("%d", 1);
-	//	else
-	//		printf("%d", 0);
-	//}
-
-	//for (size_t i = bits - 1; i >=0; --i)// size_t ERROR
-	for (int i = bits - 1; i >= 0; --i)
-	{
-		const unsigned char mask =
-			(unsigned char)pow((double)2, (double)(i));
-		// unsigned char mask = pow(2, (bits - 1 - i));
-
-		if ((num & mask) == mask)
-			printf("%d", 1);
-		else
-			printf("%d", 0);
-	}
-	printf("\n");
 }
+//
+//void print_binary(const unsigned char num)
+//{
+//	printf("Decimal %3d == Binary ", num);
+//
+//	const size_t bits = sizeof(num) * CHAR_BIT;
+//
+//	//for (size_t i = 0; i < bits; ++i)
+//	//{
+//	//	const unsigned char mask =
+//	//		(unsigned char)pow((double)2, (double)(bits - 1 - i));
+//	//	// unsigned char mask = pow(2, (bits - 1 - i));
+//
+//	//	if ((num & mask) == mask)
+//	//		printf("%d", 1);
+//	//	else
+//	//		printf("%d", 0);
+//	//}
+//
+//	//for (size_t i = bits - 1; i >=0; --i)// size_t ERROR
+//	for (int i = bits - 1; i >= 0; --i)
+//	{
+//		const unsigned char mask =
+//			(unsigned char)pow((double)2, (double)(i));
+//		// unsigned char mask = pow(2, (bits - 1 - i));
+//
+//		if ((num & mask) == mask)
+//			printf("%d", 1);
+//		else
+//			printf("%d", 0);
+//	}
+//	printf("\n");
+//}
 
 unsigned char to_decimal(const char bi[])
 {
