@@ -11,7 +11,28 @@ int main()
 		 5. Lower characters to Upper characters
 	*/
 
+	int ch;
 
+	while ((ch = getchar()) != '\n')
+	{
+		if (ch >= 'A' && ch <= 'Z')
+			ch += 'a' - 'A';
+		else if (ch >= 'a' && ch <= 'z')
+			ch -= 'a' - 'A';
+
+		if (ch >= '0' && ch <= '9')
+			ch = '*';
+
+		if (ch == 'f' || ch == 'F')
+			ch = 'X';
+
+		else if (ch == 'F')
+			ch = 'X';
+
+		putchar(ch);
+	}
+
+	putchar(ch);
 
 	return 0;
 }
