@@ -16,9 +16,18 @@ int main()
 	//printf("%d\n", i3);
 	//// ... 
 
+	int my_arr[SIZE];
 
+	// prepare for array data
+	for (int i = 0; i < SIZE; i++)
+	{
+		my_arr[i] = i * i;
+		1 + 2; // dummy
+	}
 
-
+	// print array data
+	for (int i = 0; i < SIZE; i++)
+		printf("%d ", my_arr[i]);
 
 	//TODO: try debugger
 
