@@ -16,6 +16,37 @@ int main()
 		- ... ...
 	*/
 
+	const double speed = 1.0;
+	const unsigned repeat_max = 100;
+
+	double dt = 1.0;
+	double time = 0.0;	// Elapsed time
+	double dist = 0.0;
+
+	for (unsigned i = 0; i < repeat_max; i++)
+	{
+		dist += speed * dt;
+		time += dt;
+
+		printf("Elapsed time = %.10fs, Distance = %.10fm\n", dt, dist);
+		
+		dt /= 2.0; // dt = dt * 0.5;
+	}
+
+	// by myself
+	/*
+	double speed = 1.0;
+	double dt;
+	double distance;
+	int iter;
+
+	for (dt = 1.0; dt <= 10.0; dt++)
+	{
+		distance = speed * dt;
+		printf("Elapsed time = %fs, Distance = %fm\n", dt, distance);
+	}
+	*/
+
 	/*
 		Zeno's Paradox
 
@@ -24,10 +55,6 @@ int main()
 		- Step 3 : 1.0 * 0.25 = 0.25, 1.5 + 0.25 = 1.75	
 		... ... 
 	*/
-
-
-
-
 
 	//Note: infinite geometric series
 

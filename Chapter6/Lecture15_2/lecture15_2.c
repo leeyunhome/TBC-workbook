@@ -7,11 +7,17 @@
 
 int main()
 {
-	//int r;// row loop
-	//int c;// character loop
+	int r;// row loop
+	int c;// character loop
 
-
-
+	for (r = 0; r < NUM_ROWS; r++)
+	{
+		for (c = FIRST_CHAR; c < FIRST_CHAR + r + 1; c++)
+		{
+			printf("%c ", c);
+		}
+		printf("\n");
+	}
 
 	return 0;
 }

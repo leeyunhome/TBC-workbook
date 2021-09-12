@@ -12,15 +12,23 @@ int main()
 	double speed_arch = 10.0;
 	double speed_turtle = 0.001;
 	double dt = 0.01;
-	//unsigned i;
+	unsigned i;
 
 	printf("Time = %fs, dt = %fs, Archilleus = %fm, turtle = %fm\n",
 		time, dt, dist_arch, dist_turtle);
 
+	for (i = 0; i < repeat_max; i++)
+	{
+		dist_arch = dist_arch + dt * speed_arch;
+		dist_turtle = dist_turtle + dt * speed_turtle;
 
+		time += dt;
 
+		printf("Time = %fs, dt = %fs, Archilleus = %fm, turtle = %fm\n",
+			time, dt, dist_arch, dist_turtle);
 
-
+		dt *= 0.5;
+	}
 
 	return 0;
 }

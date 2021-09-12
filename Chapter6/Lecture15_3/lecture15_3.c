@@ -3,11 +3,32 @@
 
 //#define NUM_ROWS 12
 #define FIRST_CHAR	'A'
-//#define LAST_CHAR   'K'
+//#define LAST_CHAR   'L'
 
 int main()
 {
+	char last_char;
 
+	int flag = scanf("%c", &last_char);
+	if (1 != flag)
+	{
+		printf("ERROR: Wrong input.\n");
+		return -1;
+	}
+
+	const char num_rows = last_char - FIRST_CHAR + 1;
+
+	int r;
+	int c;
+
+	for (r = 0; r < num_rows; r++)
+	{
+		for (c = FIRST_CHAR + r; c < + FIRST_CHAR + num_rows; c++)
+		{
+			printf("%c ", c);
+		}
+		printf("\n");
+	}
 
 
 	return 0;
