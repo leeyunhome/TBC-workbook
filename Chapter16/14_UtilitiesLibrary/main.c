@@ -18,7 +18,7 @@ void thankyou(void)
 
 int main()
 {
-	printf("Purchased?\n");
+	printf("Purchased?\n"); 
 	if (getchar() == 'y')
 		atexit(thankyou);
 
