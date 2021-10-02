@@ -8,21 +8,21 @@
     _Generic : C11 keyword
 */
 
-// #define MYTYPE(X) _Generic((X), \
-//     int: "int", \
-//     float: "float", \
-//     double: "double", \
-//     default: "other"\
-// )
+ #define MYTYPE(X) _Generic((X), \
+     int: "int", \
+     float: "float", \
+     double: "double", \
+     default: "other"\
+ )
 
-// #define MYTYPE(X) _Generic((X), \
-//     int: "int", \
-//     float: "float", \
-//     double: "double", \
-//     long: "long", \
-//     int* : "int*", \
-//     default: "other"\
-// )
+ #define MYTYPE(X) _Generic((X), \
+     int: "int", \
+     float: "float", \
+     double: "double", \
+     long: "long", \
+     int* : "int*", \
+     default: "other"\
+ )
 
 #define MYTYPE(X) _Generic((X), \
     int: (X + 123), \
