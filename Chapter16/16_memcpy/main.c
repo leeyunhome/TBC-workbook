@@ -27,7 +27,7 @@ int main()
 	for (int row = 0; row < LEN; ++row)
 		arr2[row] = arr1[row];
 
-	memcpy(arr2, arr1, sizeof(int) * LEN);
+	memcpy(arr2, arr1, sizeof(int) * LEN); // ÃßÃµ
 	prt(arr2, LEN);
 
 	/*
