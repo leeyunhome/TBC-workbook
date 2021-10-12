@@ -9,8 +9,8 @@ int main()
 	print_hi();
 	print_hello();
 	print_hi();
-	print_str("No one lives forever.");
-	print_str("Valar morghulis.");
+	print_centered_str("No one lives forever.");
+	print_centered_str("Valar morghulis.");
 
 	printf("Hello!!");
 

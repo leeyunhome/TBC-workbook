@@ -14,7 +14,7 @@ void print_hi()
 	// many more lines
 }
 
-void print_str(char* str)
+void print_centered_str(char* str)
 {
 	printf("%s\n", str);
 }
