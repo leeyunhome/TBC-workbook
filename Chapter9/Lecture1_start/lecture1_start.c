@@ -7,20 +7,15 @@
 #define ADDRESS "Seoul, Korea"
 
 void print_char(char ch, int width);
-void print_name(char* name);
-void print_addr(char* addr);
+void print_str(char* name);
 
 int main()
 {
 	print_char('*', WIDTH);
 	print_char(' ', WIDTH);
-	print_name(NAME);
+	print_str(NAME);
 	print_char(' ', WIDTH);
-	printf("\n");
-	print_char(' ', WIDTH);
-	print_addr(ADDRESS);
-	print_char(' ', WIDTH);
-	printf("\n");
+	print_str(ADDRESS);
 	print_char('*', WIDTH);
 	//printf("********************\n");
 	//printf("           Your name\n");
@@ -51,12 +46,7 @@ void print_char(char ch, int width)
 	}
 }
 
-void print_name(char* name)
+void print_str(char* name)
 {
-	printf("%s", name);
-}
-
-void print_addr(char* addr)
-{
-	printf("%s", addr);
+	printf("%s\n", name);
 }
