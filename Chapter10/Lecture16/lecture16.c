@@ -24,28 +24,31 @@ int main()
 	printf("%d\n", data[2][3]);
 
 	int* ptr = &data[0][0];
+	printf("%d\n", *(ptr + 3 + COLS * 2));
 
-
+	printf("Sum of all elements = %d\n", sum2d_1(data));
 
 	return 0;
 }
 
-//int sum2d_1(int ar[ROWS][COLS])
-//{
-//	int r, c, tot = 0;
-//
-//
-//	return tot;
-//}
-//
-//int sum2d_2(int ar[][COLS], int row)
-//{
-//	int r, c, tot = 0;
-//	
-//
-//	return tot;
-//}
-//
+int sum2d_1(int ar[ROWS][COLS])
+{
+	int r, c, tot = 0;
+	for (r = 0; r < ROWS; r++)
+		for (c = 0; c < COLS; c++)
+			tot += ar[r][c];
+	return tot;
+}
+
+int sum2d_2(int ar[][COLS], int row)
+{
+	int r, c, tot = 0;
+	for (r = 0; r < row; r++)
+		for (c = 0; c < COLS; c++)
+			tot += ar[r][c];
+	return tot;
+}
+
 int sum2d_3(int* ar, int row, int col)
 {
 	int r, c, tot = 0;
