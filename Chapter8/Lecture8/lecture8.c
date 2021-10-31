@@ -9,8 +9,10 @@ void count(void);
 
 int main()
 {
-	printf("Select menu");
-	printf("1. input an char\t2. ")
+	//printf("Select menu");
+	//printf("1. input an char\t2. ");
+
+	int user_choice;
 
 	while ((user_choice = get_choice()) != 'q')
 	{
@@ -31,7 +33,7 @@ int main()
 			break;
 		}
 	}
-	/*char sel = 0;
+	//char sel = 0;
 
 
 
@@ -61,16 +63,18 @@ void count(void)
 //
 //}
 //
-//char get_choice(void)
-//{
-//	int user_input;
-//	
-//
-//
-//
-//
-//	return user_input;
-//}
+char get_choice(void)
+{
+	int user_input;
+	
+	printf("Enter\n>> ");
+	int flag = scanf("%c", &user_input);
+
+
+
+
+	return (char)user_input;
+}
 //
 //char get_first_char(void)
 //{
@@ -83,11 +87,19 @@ void count(void)
 //	return ch;
 //}
 //
-//int get_integer(void)
-//{
-//	int input;
-//
-//
-//
-//	return input;
-//}
+int get_integer(void)
+{
+	int input;
+
+	//int flag = scanf("%d", &input);
+	while (1 != scanf("%d", &input))
+	{
+		char ch = '\0';
+		printf("Your input - ");
+		while ((ch = getchar()) != '\n')
+			putchar(ch);
+		printf("- is not an integer. please try again.\n");
+	}
+
+	return input;
+}
