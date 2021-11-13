@@ -71,13 +71,12 @@ int main()
 	//}
 
 	/* C const and C++ const */
-	//{
-	//	const int y;
-	//	const int* p2 = &y;
-	//	int* p1;
-	//	p1 = p2;		// warning (error in cpp)
-	//}
-
+	{
+		const int y;
+		const int* p2 = &y;
+		int* p1;
+		p1 = p2;		// warning (error in cpp)
+	}
 
 	return 0;
 }

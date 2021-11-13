@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.452
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture1", "Lecture1\Lecture1.vcxproj", "{3F465748-6E96-489B-91D5-7107E9C43F46}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture01", "Lecture1\Lecture1.vcxproj", "{3F465748-6E96-489B-91D5-7107E9C43F46}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture2", "Lecture2\Lecture2.vcxproj", "{9B34DF82-50FB-41EE-AA8E-8F19CB36FB2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture02", "Lecture2\Lecture2.vcxproj", "{9B34DF82-50FB-41EE-AA8E-8F19CB36FB2E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture3", "Lecture3\Lecture3.vcxproj", "{50FACFF7-450E-474E-B222-49C707F9422B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture03", "Lecture3\Lecture3.vcxproj", "{50FACFF7-450E-474E-B222-49C707F9422B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture4", "Lecture4\Lecture4.vcxproj", "{26BBB01B-8697-42B7-84FE-1154B32257FC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture04", "Lecture4\Lecture4.vcxproj", "{26BBB01B-8697-42B7-84FE-1154B32257FC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture5", "Lecture5\Lecture5.vcxproj", "{B1C2BE1F-49BF-4D3F-849E-32D6E80EB3C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture05", "Lecture5\Lecture5.vcxproj", "{B1C2BE1F-49BF-4D3F-849E-32D6E80EB3C7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture6", "Lecture6\Lecture6.vcxproj", "{E2BA7942-F055-4645-8FC7-83BBC582C5AB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture06", "Lecture6\Lecture6.vcxproj", "{E2BA7942-F055-4645-8FC7-83BBC582C5AB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture7", "Lecture7\Lecture7.vcxproj", "{D8ED202B-8F88-4C19-B5F6-A812C8873451}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture07", "Lecture7\Lecture7.vcxproj", "{D8ED202B-8F88-4C19-B5F6-A812C8873451}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture8", "Lecture8\Lecture8.vcxproj", "{8500D4E9-5258-443E-914E-C6E6D914058B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture08", "Lecture8\Lecture8.vcxproj", "{8500D4E9-5258-443E-914E-C6E6D914058B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture9", "Lecture9\Lecture9.vcxproj", "{38F00BA7-C8E1-4FB4-A2D8-3B9697F95BEE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture09", "Lecture9\Lecture9.vcxproj", "{38F00BA7-C8E1-4FB4-A2D8-3B9697F95BEE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture10", "Lecture10\Lecture10.vcxproj", "{CA3988CB-85D8-4C9F-B5C6-6D07C1A9E4E0}"
 EndProject
@@ -35,9 +35,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture15", "Lecture15\Lect
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture16", "Lecture16\Lecture16.vcxproj", "{BEFD4FCF-07F9-4A2F-8C3A-2481512763F3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture17", "Lecture17\Lecture17.vcxproj", "{AC08598B-D196-4377-ACD3-72DFF19DD14C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture17 변수로 길이를 정할 수 있는 배열", "Lecture17\Lecture17.vcxproj", "{AC08598B-D196-4377-ACD3-72DFF19DD14C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture18", "Lecture18\Lecture18.vcxproj", "{F4660E27-4731-4578-BA40-2F880C89D889}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10.9 포인터 연산 총정리", "10.9 포인터 연산 총정리\10.9 포인터 연산 총정리.vcxproj", "{F2F7341E-623D-44C9-8D5B-00937C37F68F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10.10 const와 배열과 포인터", "10.10 const와 배열과 포인터\10.10 const와 배열과 포인터.vcxproj", "{CB3BC640-F948-4FE4-B86C-96DCF392E31F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -191,6 +195,22 @@ Global
 		{F4660E27-4731-4578-BA40-2F880C89D889}.Release|x64.Build.0 = Release|x64
 		{F4660E27-4731-4578-BA40-2F880C89D889}.Release|x86.ActiveCfg = Release|Win32
 		{F4660E27-4731-4578-BA40-2F880C89D889}.Release|x86.Build.0 = Release|Win32
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Debug|x64.ActiveCfg = Debug|x64
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Debug|x64.Build.0 = Debug|x64
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Debug|x86.ActiveCfg = Debug|Win32
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Debug|x86.Build.0 = Debug|Win32
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Release|x64.ActiveCfg = Release|x64
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Release|x64.Build.0 = Release|x64
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Release|x86.ActiveCfg = Release|Win32
+		{F2F7341E-623D-44C9-8D5B-00937C37F68F}.Release|x86.Build.0 = Release|Win32
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Debug|x64.ActiveCfg = Debug|x64
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Debug|x64.Build.0 = Debug|x64
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Debug|x86.ActiveCfg = Debug|Win32
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Debug|x86.Build.0 = Debug|Win32
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Release|x64.ActiveCfg = Release|x64
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Release|x64.Build.0 = Release|x64
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Release|x86.ActiveCfg = Release|Win32
+		{CB3BC640-F948-4FE4-B86C-96DCF392E31F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
