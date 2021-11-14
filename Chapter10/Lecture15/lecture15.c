@@ -61,22 +61,23 @@ int main()
 	//*pp2 = p3;
 	//pp2 = &p1;
 
-	//{
-	//	const int** pp2;
-	//	int* p1;
-	//	const int n = 13;
-	//	pp2 = &p1;		// const?
-	//	*pp2 = &n;		// sets p1 to point at n
-	//	*p1 = 10;		// change n
-	//}
+	{
+		const int** pp2;
+		int* p1;
+		const int n = 13;
+		pp2 = &p1;		// const?
+		*pp2 = &n;		// sets p1 to point at n
+		*p1 = 10;		// change n
+	}
 
 	/* C const and C++ const */
-	{
-		const int y;
-		const int* p2 = &y;
-		int* p1;
-		p1 = p2;		// warning (error in cpp)
-	}
+	//{
+	//	const int y;
+	//	const int* p2 = &y;
+	//	int* p1;
+	//	p1 = p2;		// warning (error in cpp)
+	//}
+
 
 	return 0;
 }
