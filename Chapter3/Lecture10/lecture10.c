@@ -5,7 +5,12 @@
 int main()
 {
 	char c = 'A';
-	char d = '*';// d = 'A'
+	char d = 65;	// d = 'A'
+
+	printf("%c %hhd\n", c, c);
+	printf("%c %hhd\n", d, d);
+
+	//char d = '*';// d = 'A'
 
 
 
