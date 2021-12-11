@@ -35,71 +35,120 @@ int main()
 	}
 	//char sel = 0;
 
-
-
 	return 0;
+}
+
+char get_choice(void)
+{
+	char ch = 0;
+	printf("Enter the letter of your choice:\n");
+	printf("a. avengers\tb. beep\n");
+	printf("c. count\tq. quit\n");
+
+	ch = get_first_char();
+
+	return ch;
+}
+
+char get_first_char(void)
+{
+	char ch;
+	//int flag = scanf("%c", &ch);
+
+	while ((ch = getchar()) != '\n')
+		continue;
+
+	return ch;
+}
+
+int  get_integer(void)
+{
+	int number;
+
+	printf("Enter an integer:\n");
+
+	int flag = scanf("%d", &number);
+	while (1 != flag)
+	{
+		printf("Wrong input. please try again.\n");
+	}
+
+	return number;
 }
 
 void count(void)
 {
-	int input = 0;
-	int i;
+	int idx;
+	int number = 0;
+	
+	number = get_integer();
 
-	//scanf("%d", &input);
-	printf("Enter an integer:\n");
-	input = get_integer();
-
-	for (i = 1; i <= input; ++i)
-		printf("%d\n", i);
-
-	while (getchar() != '\n')
-		continue;
+	for (idx = 0; idx < number; idx++)
+	{
+		printf("%d\n", idx + 1);
+	}
 }
-
+//
 //void count(void)
 //{
+//	int input = 0;
+//	int i;
 //
+//	//scanf("%d", &input);
+//	printf("Enter an integer:\n");
+//	input = get_integer();
 //
+//	for (i = 1; i <= input; ++i)
+//		printf("%d\n", i);
 //
+//	while (getchar() != '\n')
+//		continue;
 //}
 //
-char get_choice(void)
-{
-	int user_input;
-	
-	printf("Enter\n>> ");
-	int flag = scanf("%c", &user_input);
-
-
-
-
-	return (char)user_input;
-}
-//
-//char get_first_char(void)
+////void count(void)
+////{
+////
+////
+////
+////}
+////
+//char get_choice(void)
 //{
-//	int ch;
+//	int user_input;
+//	
+//	printf("Enter\n>> ");
+//	int flag = scanf("%c", &user_input);
 //
 //
 //
 //
-//
-//	return ch;
+//	return (char)user_input;
 //}
+////
+////char get_first_char(void)
+////{
+////	int ch;
+////
+////
+////
+////
+////
+////	return ch;
+////}
+////
+//int get_integer(void)
+//{
+//	int input;
 //
-int get_integer(void)
-{
-	int input;
-
-	//int flag = scanf("%d", &input);
-	while (1 != scanf("%d", &input))
-	{
-		char ch = '\0';
-		printf("Your input - ");
-		while ((ch = getchar()) != '\n')
-			putchar(ch);
-		printf("- is not an integer. please try again.\n");
-	}
-
-	return input;
-}
+//	//int flag = scanf("%d", &input);
+//	while (1 != scanf("%d", &input))
+//	{
+//		char ch = '\0';
+//		printf("Your input - ");
+//		while ((ch = getchar()) != '\n')
+//			putchar(ch);
+//		printf("- is not an integer. please try again.\n");
+//	}
+//
+//	return input;
+//}
