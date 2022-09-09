@@ -40,22 +40,29 @@ int main()
 
 char get_choice(void)
 {
-	char ch = 0;
+	int user_input;
+
 	printf("Enter the letter of your choice:\n");
 	printf("a. avengers\tb. beep\n");
 	printf("c. count\tq. quit\n");
 
-	ch = get_first_char();
+	user_input = get_first_char();
 
-	return ch;
+	while ((user_input < 'a' || user_input > 'c') && user_input != 'q')
+	{
+		printf("Please try again.\n");
+		user_input = get_first_char();
+	}
+
+	return user_input;
 }
 
 char get_first_char(void)
 {
 	char ch;
-	//int flag = scanf("%c", &ch);
 
-	while ((ch = getchar()) != '\n')
+	ch = getchar();
+	while (getchar() != '\n')
 		continue;
 
 	return ch;
@@ -64,13 +71,16 @@ char get_first_char(void)
 int  get_integer(void)
 {
 	int number;
+	char c;
 
 	printf("Enter an integer:\n");
 
 	int flag = scanf("%d", &number);
 	while (1 != flag)
 	{
-		printf("Wrong input. please try again.\n");
+		while ((c = getchar()) != '\n')
+			putchar(c);
+		printf(" is not an integer. Wrong input. please try again.\n");
 	}
 
 	return number;
@@ -87,6 +97,8 @@ void count(void)
 	{
 		printf("%d\n", idx + 1);
 	}
+	while (getchar() != '\n')
+		continue;
 }
 //
 //void count(void)
