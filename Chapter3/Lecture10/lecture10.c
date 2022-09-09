@@ -5,18 +5,24 @@
 int main()
 {
 	char c = 'A';
-	char d = 65;	// d = 'A'
+	char d = '*';	// d = 'A'
 
 	printf("%c %hhd\n", c, c);
 	printf("%c %hhd\n", d, d);
 
-	//char d = '*';// d = 'A'
+	//char a = '\a';
+	//printf("%c", a);
 
+	//printf("\07");
+	//printf("\x23\n");
 
+	//float salary;
+	////printf("$______");
+	//printf("$______\b\b\b\b\b\b");
+	//int flag = scanf("%f", &salary);
 
-
-
-
+	//printf("AB\tCDEF\n");
+	//printf("ABC\tDEF\n");
 
 	printf("\\ \'HA+\' \"Hello\" \?\n");
 
