@@ -18,11 +18,13 @@ int main()
 	printf("%.3f\n", 123456.1234567);
 	printf("%.3f\n", 123456.1235);
 	printf("%10.3f\n", 123.45678);
-	//printf("%10i\n", 1234567);
-	//printf("%10i\n", 1234567);
-	//printf("%10i\n", 1234567);
-	//printf("%10i\n", 1234567);
-	//printf("%10i\n", 1234567);
+	printf("%010.3f\n", 123.45678);
+	printf("%.5s\n", "ABCDEFGHIJKLMN");
+	printf("%.s\n", "ABCDEFGHIJKLMN");
+
+	printf("\nLength\n");
+	printf("%hhd %hd %d\n", 257, 257, 257);
+	printf("%d %lld %lld\n", INT_MAX + 1, INT_MAX + 1, 2147483648LL); // 
 
 
 
