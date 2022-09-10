@@ -17,6 +17,8 @@ int main()
 	area = PI * radius * radius;
 	circum = 2.0f * PI * radius;
 
+	// sphere area, sphere volume, ....
+
 	printf("Area is %f\n", area);
 	printf("Circumference is %f\n", circum);
 
