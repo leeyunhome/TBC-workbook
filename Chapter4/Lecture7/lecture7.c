@@ -16,7 +16,8 @@ we owe this to everyone who's not in this room to try.\n");
 	printf("%u %u %u\n", 1024, -1, UINT_MAX);
 
 	printf("\n");
-	printf("%f %f %lf\n", 3.141592f, d, d);
+	// f가 사실은 double을 출력
+	printf("%f %f %lf\n", 3.141592f, d, d); // l in %lf is ignored
 	printf("%a %A\n", d, d);
 	printf("%e %E\n", d, d);
 
