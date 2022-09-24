@@ -28,5 +28,20 @@ int main()
 		printf("%f ", d);
 	printf("\n");
 
+	//int i, n;
+	//n = 2;
+	//for (i = 2, n < 10; /* left blank */)
+	//{
+	//	n = n * i;
+	//	printf("%d\n", n);
+	//}
+
+	//for (;;)
+	//	printf("I love you! ");
+
+	int i = 0;
+	for (printf("Let's go!\n"); i != 7; scanf("%d", &i))
+		; // null statement
+
 	return 0;
 }

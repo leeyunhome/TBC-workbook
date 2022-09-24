@@ -12,6 +12,14 @@ int main()
 	i = i + 10;
 	i += 10;
 
+	i %= 4;
+
+	i = i * (1 + 2);
+	i *= 1 + 2;
+	i *= (1 + 2);	// Check precedence
+
+	for (int i = 0; i < 10; i++)
+		;
 	
 	return 0;
 }
