@@ -22,9 +22,25 @@ int main()
 
 void draw(int n)
 {
-	//for (int idx = 0; idx < n; idx++)
-	//	printf("*");
-	while (n-- > 0)
+	while (n > 0)
+	{
 		printf("*");
+		n--;
+	}
 	printf("\n");
 }
+
+
+
+
+
+
+//
+//void draw(int n)
+//{
+//	//for (int idx = 0; idx < n; idx++)
+//	//	printf("*");
+//	while (n-- > 0)
+//		printf("*");
+//	printf("\n");
+//}

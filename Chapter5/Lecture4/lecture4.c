@@ -3,29 +3,43 @@
 
 int main()
 {
-	double seed_money, target_money, annual_interest;
-
-	printf("Input seed money : ");
-	scanf("%lf", &seed_money);
-
-	printf("Input target money : ");
-	scanf("%lf", &target_money);
-
-	printf("Input annual interest (%%) : ");
-	scanf("%lf", &annual_interest);
-
-	double fund = seed_money;
+	double seed, target, interest = 0.0;
 	int year_count = 0;
 
-	while (fund < target_money)
+	printf("Input seed money : ______\b\b\b\b\b\b\b");
+	int flag = scanf("%lf", &seed);
+	if (1 != flag)
 	{
-		fund = fund + (fund * annual_interest / 100.0);
-		year_count += 1;
-		//year_count++;
-		printf("%f\n", fund);
+		puts("Wrong input.");
+		exit(1);
 	}
 
-	printf("It takes %d years\n", year_count);
+	printf("Input target money : ______\b\b\b\b\b\b");
+	flag = scanf("%lf", &target);
+	if (1 != flag)
+	{
+		puts("Wrong input.");
+		exit(1);
+	}
+
+	printf("Input annual interest (%%) : ______\b\b\b\b\b\b");
+	flag = scanf("%lf", &interest);
+	if (1 != flag)
+	{
+		puts("Wrong input.");
+		exit(1);
+	}
+
+	double fund = seed;
+	while (fund < target)
+	{
+		fund += fund * interest * 0.01;
+		//printf("Year %d, fund %f\n", year_count,seed);
+		printf("%f\n", fund);
+		year_count++;
+	}
+
+	printf("It takes %d years.\n", year_count);
 
 	return 0;
 }
