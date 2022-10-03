@@ -7,8 +7,8 @@
 
 int main()
 {
-	int r;// row loop
-	int c;// character loop
+	int r;
+	int c;
 
 	for (r = 0; r < NUM_ROWS; r++)
 	{
@@ -21,3 +21,15 @@ int main()
 
 	return 0;
 }
+//
+//int r;// row loop
+//int c;// character loop
+//
+//for (r = 0; r < NUM_ROWS; r++)
+//{
+//	for (c = FIRST_CHAR; c < FIRST_CHAR + r + 1; c++)
+//	{
+//		printf("%c ", c);
+//	}
+//	printf("\n");
+//}
