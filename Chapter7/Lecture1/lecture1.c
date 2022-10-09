@@ -8,12 +8,26 @@ int main()
 	printf("Input a positive integer : ");
 	scanf("%d", &number);
 
-	if (0 == number % 2)
-		printf("Even\n");
-	else // if (0 != number % 2)
-		printf("Odd\n");
+	if (number % 2 != 0)
+		printf("odd\n");
+	else
+		printf("even\n");
+
 
 	//TODO: print even or odd
 
 	return 0;
 }
+
+
+
+
+
+
+
+//
+//
+//if (0 == number % 2)
+//printf("Even\n");
+//else // if (0 != number % 2)
+//printf("Odd\n");

@@ -20,14 +20,14 @@ int main()
 		else if (ch >= 'a' && ch <= 'z')
 			ch -= 'a' - 'A';
 
-		if (ch >= '0' && ch <= '9')
-			ch = '*';
+		//if (ch >= '0' && ch <= '9')
+		//	ch = '*';
 
-		if (ch == 'f' || ch == 'F')
-			ch = 'X';
+		//if (ch == 'f' || ch == 'F')
+		//	ch = 'X';
 
-		else if (ch == 'F')
-			ch = 'X';
+		//else if (ch == 'F')
+		//	ch = 'X';
 
 		putchar(ch);
 	}

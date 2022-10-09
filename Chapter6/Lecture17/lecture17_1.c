@@ -18,6 +18,10 @@ int main()
 	for (r = 0; r < SIZE; r++)
 	{
 		flag = scanf("%d", &input_num[r]);
+	}
+
+	for (r = 0; r < SIZE; r++)
+	{
 		total_sum += input_num[r];
 	}
 

@@ -23,42 +23,28 @@ int main()
 {
 	double income = 0.0;	// annual income
 	double tax = 0.0;
+	int flag = 0;
 
-	scanf("%lf", &income);
+	flag = scanf("%lf", &income);
 
 	income -= BASIC_DECUCTION;
-
+	
 	if (income <= BASE1)
-	{
 		tax = income * RATE1;
-	}
 	else if (income <= BASE2)
-	{
 		tax = BASE1 * RATE1 + (income - BASE1) * RATE2;
-	}
 	else if (income <= BASE3)
-	{
 		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (income - BASE2) * RATE3;
-	}
 	else if (income <= BASE4)
-	{
 		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (income - BASE3) * RATE4;
-	}
 	else if (income <= BASE5)
-	{
-		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
-			  + (income - BASE4) * RATE5;
-	}
+		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4 + (income - BASE4) * RATE5;
 	else if (income <= BASE6)
-	{
-		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
-			+ (BASE5 - BASE4) * RATE5 + (income - BASE5) * RATE6;
-	}
-	else // if (income > BASE6)
-	{
-		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
-			+ (BASE5 - BASE4) * RATE5 + (BASE6 - BASE5) * RATE6 + (income - BASE6) * RATE7;
-	}
+		tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4 +
+		(BASE5 - BASE4) * RATE5 + (income - BASE5) * RATE6;
+	else if (income > BASE6)
+		tax = BASE1 * RATE1 + (BASE2 - RATE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4 +
+		(BASE5 - BASE4) * RATE5 + (BASE6 - BASE5) * RATE6 + (income - BASE6) * RATE7;
 
 	printf("Tax is = %f\n", tax);
 	printf("Your income after tax deduction = %f", income - tax);
@@ -66,3 +52,47 @@ int main()
 	// https://www.nts.go.kr/support/support_01.asp?cinfo_key=MINF5520100726112800
 	// http://incomtax.fpvhxm.com/jincomtax.html
 }
+
+
+
+
+
+
+
+//
+//
+//scanf("%lf", &income);
+//
+//income -= BASIC_DECUCTION;
+//
+//if (income <= BASE1)
+//{
+//	tax = income * RATE1;
+//}
+//else if (income <= BASE2)
+//{
+//	tax = BASE1 * RATE1 + (income - BASE1) * RATE2;
+//}
+//else if (income <= BASE3)
+//{
+//	tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (income - BASE2) * RATE3;
+//}
+//else if (income <= BASE4)
+//{
+//	tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (income - BASE3) * RATE4;
+//}
+//else if (income <= BASE5)
+//{
+//	tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
+//		+ (income - BASE4) * RATE5;
+//}
+//else if (income <= BASE6)
+//{
+//	tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
+//		+ (BASE5 - BASE4) * RATE5 + (income - BASE5) * RATE6;
+//}
+//else // if (income > BASE6)
+//{
+//	tax = BASE1 * RATE1 + (BASE2 - BASE1) * RATE2 + (BASE3 - BASE2) * RATE3 + (BASE4 - BASE3) * RATE4
+//		+ (BASE5 - BASE4) * RATE5 + (BASE6 - BASE5) * RATE6 + (income - BASE6) * RATE7;
+//}
