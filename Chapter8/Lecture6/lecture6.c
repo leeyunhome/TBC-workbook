@@ -28,7 +28,7 @@ int main()
 
 long get_long(void)
 {
-	printf("Please input an integer and press enter.\n");
+	printf("Please input an integer and press enter.\n"); 
 
 	long input;
 	char c;
